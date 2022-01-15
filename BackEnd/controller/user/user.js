@@ -88,7 +88,7 @@ class User {
             if (!userInfo) {
                 return res.status(200).json({
                     code: 0,
-                    msg: "用户名或密码错误！",
+                    msg: "用户名或密码错误!",
                 });
             } else {
                 if (Boolean(userInfo.isAdmin)) {
@@ -139,7 +139,7 @@ class User {
         try {
             const userList = await UserModel.find();
             // let newUsers = userList.filter((i) => {
-            //     return i.username != "李魁";
+            //     return i.username != "myCenter";
             // });
             if (Boolean(result.superAdmin)) {
                 return res.status(200).json({

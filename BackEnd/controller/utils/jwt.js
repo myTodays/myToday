@@ -8,7 +8,7 @@ class Jwt {
     //生成token
     generateToken() {
         let content = this.data; // 要生成token的主题信息
-        let secretKey = "me_likui"; // 这是加密的key（密钥）
+        let secretKey = "my_center_key"; // 这是加密的key（密钥）
         let token = jwt.sign(content, secretKey, {
             expiresIn: 60 * 60 * 1000, // 有效时间(s)
         });
@@ -17,7 +17,7 @@ class Jwt {
     // 校验token
     verifyToken() {
         let token = this.data;
-        let secretKey = "me_likui";
+        let secretKey = "my_center_key";
         let result;
         jwt.verify(token, secretKey, (err, decode) => {
             if (err) {
