@@ -1,0 +1,109 @@
+@keyframes xuanzhuan {
+    0% {
+        box-shadow: 0rpx 0rpx 30rpx 6rpx rgb(247, 126, 126);
+        transform: rotateZ(0deg);
+    }
+    25% {
+        box-shadow: 0rpx 0rpx 30rpx 6rpx rgb(236, 234, 81);
+        transform: rotateZ(90deg);
+    }
+    50% {
+        box-shadow: 0rpx 0rpx 30rpx 6rpx rgb(99, 235, 99);
+        transform: rotateZ(180deg);
+    }
+    75% {
+        box-shadow: 0rpx 0rpx 30rpx 6rpx rgb(96, 169, 236);
+        transform: rotateZ(270deg);
+    }
+    100% {
+        box-shadow: 0rpx 0rpx 30rpx 6rpx rgba(241, 134, 218, 0.9);
+        transform: rotateZ(360deg);
+    }
+}
+@keyframes btn {
+    0% {
+        box-shadow: 0rpx 0rpx 30rpx 6rpx rgb(247, 126, 126);
+    }
+    25% {
+        box-shadow: 0rpx 0rpx 30rpx 6rpx rgb(236, 234, 81);
+    }
+    50% {
+        box-shadow: 0rpx 0rpx 30rpx 6rpx rgb(99, 235, 99);
+    }
+    75% {
+        box-shadow: 0rpx 0rpx 30rpx 6rpx rgb(96, 169, 236);
+    }
+    100% {
+        box-shadow: 0rpx 0rpx 30rpx 6rpx rgba(241, 134, 218, 0.9);
+    }
+}
+@keyframes in_btn {
+    0% {
+        box-shadow: inset 0rpx 0rpx 40rpx 6rpx rgb(255, 0, 0),
+            0rpx 6rpx 15rpx 4rpx rgba(0, 0, 0, 0.3);
+    }
+    25% {
+        box-shadow: inset 0rpx 0rpx 40rpx 6rpx rgb(13, 109, 253),
+            0rpx 6rpx 15rpx 4rpx rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: inset 0rpx 0rpx 40rpx 6rpx rgb(253, 9, 241),
+            0rpx 6rpx 15rpx 4rpx rgba(0, 0, 0, 0.3);
+    }
+    75% {
+        box-shadow: inset 0rpx 0rpx 40rpx 6rpx rgb(15, 144, 250),
+            0rpx 6rpx 15rpx 4rpx rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        box-shadow: inset 0rpx 0rpx 40rpx 6rpx rgb(255, 0, 0),
+            0rpx 6rpx 15rpx 4rpx rgba(0, 0, 0, 0.3);
+    }
+}
+
+@keyframes out_btn {
+    0% {
+        box-shadow: 0rpx 0rpx 30rpx 6rpx rgb(247, 126, 126);
+    }
+    25% {
+        box-shadow: 0rpx 0rpx 30rpx 6rpx rgb(236, 234, 81);
+    }
+    50% {
+        box-shadow: 0rpx 0rpx 30rpx 6rpx rgb(99, 235, 99);
+    }
+    75% {
+        box-shadow: 0rpx 0rpx 30rpx 6rpx rgb(96, 169, 236);
+    }
+    100% {
+        box-shadow: 0rpx 0rpx 30rpx 6rpx rgba(241, 134, 218, 0.9);
+    }
+}
+
+@keyframes textshadow {
+
+    0%,
+    100% {
+        text-shadow: -1.5px -1.5px 0 #0ff, 1.5px 1.5px 0 #f00;
+    }
+
+    25% {
+        text-shadow: 1.5px 1.5px 0 #0ff, -1.5px -1.5px 0 #f00;
+    }
+
+    50% {
+        text-shadow: 1.5px -1.5px 0 #0ff, 1.5px -1.5px 0 #f00;
+    }
+
+    75% {
+        text-shadow: -1.5px 1.5px 0 #0ff, -1.5px 1.5px 0 #f00;
+    }
+}
+
+@keyframes slide {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -100% 0;
+    }
+}

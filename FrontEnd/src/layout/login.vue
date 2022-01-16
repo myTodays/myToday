@@ -1,137 +1,203 @@
 <template>
-    <div id="bodyBox"></div>
+    <div class="login-box">
+        <div class="login-tips-box">
+            <v-logo fontSize="60px"></v-logo>
+            <div class="loading">
+                <v-loading></v-loading>
+            </div>
+        </div>
+        <div class="login-content">
+            <div class="login-title">
+                <v-logo
+                    :logoText="username || 'myCenter'"
+                    fontSize="60px"
+                ></v-logo>
+            </div>
+            <div class="login-input" :class="{ active: index == 1 }">
+                <div class="left">
+                    <span class="iconfont icon-zhanghao"></span>
+                    <input
+                        type="text"
+                        placeholder="请输入账号（6-20个字符）"
+                        v-model="username"
+                        @focus="focusClick(1)"
+                        @blur="blueClick"
+                    />
+                </div>
+                <!-- <span class="right iconfont">图</span> -->
+            </div>
+            <div class="login-input" :class="{ active: index == 2 }">
+                <div class="left">
+                    <span class="iconfont icon-mima3"></span>
+                    <input
+                        :type="showPwd ? 'text' : 'password'"
+                        placeholder="请输入密码（6-20个字符）"
+                        v-model="password"
+                        @focus="focusClick(2)"
+                        @blur="blueClick"
+                    />
+                </div>
+                <span
+                    class="right iconfont icon-eye2"
+                    :class="{ active: showPwd }"
+                    @click="showPwd = !showPwd"
+                ></span>
+            </div>
+            <div class="find-pwd"><span>忘记密码?</span></div>
+            <div class="login-btn">登&nbsp;&nbsp;&nbsp;&nbsp;录</div>
+        </div>
+    </div>
 </template>
-
 <script>
-// let mesh = null;
-// mesh=  null;
-// scene=  null;
-// let container=  null;
-let scene = null,
-    bodyContent = null,
-    SEPARATION = 100,
-    AMOUNTX = 50,
-    AMOUNTY = 50,
-    camera = null,
-    renderer = null,
-    particles = null,
-    count = null,
-    mouseX = null,
-    mouseY = null,
-    windowHalfX = window.innerWidth / 2,
-    windowHalfY = window.innerHeight / 2;
-import * as THREE from "three";
 export default {
-    name: "background-wrap",
     data() {
-        return {};
-    },
-    mounted() {
-        bodyContent = document.getElementById("bodyBox");
-        bodyContent && this.init();
-        this.animate();
+        return {
+            index: 0,
+            showPwd: false,
+            username: "",
+            password: "",
+        };
     },
     methods: {
-        init() {
-            camera = new THREE.PerspectiveCamera(
-                75,
-                window.innerWidth / window.innerHeight,
-                1,
-                10000
-            );
-            camera.position.z = 1000;
-            scene = new THREE.Scene();
-            const numParticles = AMOUNTX * AMOUNTY;
-            const positions = new Float32Array(numParticles * 3);
-            const scales = new Float32Array(numParticles);
-            let i = 0,
-                j = 0;
-            for (let ix = 0; ix < AMOUNTX; ix++) {
-                for (let iy = 0; iy < AMOUNTY; iy++) {
-                    positions[i] = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2; // x
-                    positions[i + 1] = 0; // y
-                    positions[i + 2] =
-                        iy * SEPARATION - (AMOUNTY * SEPARATION) / 2; // z
-
-                    scales[j] = 1;
-
-                    i += 3;
-                    j++;
-                }
-            }
-            const geometry = new THREE.BufferGeometry();
-            geometry.setAttribute(
-                "position",
-                new THREE.BufferAttribute(positions, 3)
-            );
-            geometry.setAttribute(
-                "scale",
-                new THREE.BufferAttribute(scales, 1)
-            );
-            const material = new THREE.ShaderMaterial({
-                uniforms: {
-                    color: { value: new THREE.Color(0x378af0) },
-                },
-                vertexShader:
-                    document.getElementById("vertexshader").textContent,
-                fragmentShader:
-                    document.getElementById("fragmentshader").textContent,
-            });
-            particles = new THREE.Points(geometry, material);
-            scene.add(particles);
-            renderer = new THREE.WebGLRenderer({ antialias: true });
-            renderer.setPixelRatio(window.devicePixelRatio);
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            bodyContent.appendChild(renderer.domElement);
-            bodyContent.style.touchAction = "none";
-            window.addEventListener("pointermove", this.onPointerMove);
-            window.addEventListener("resize", this.onWindowResize);
+        focusClick(item) {
+            this.index = item;
         },
-        onWindowResize() {
-            windowHalfX = window.innerWidth / 2;
-            windowHalfY = window.innerHeight / 2;
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        },
-        onPointerMove(event) {
-            if (event.isPrimary === false) return;
-            mouseX = event.clientX - windowHalfX;
-            mouseY = event.clientY - windowHalfY;
-        },
-        animate() {
-            requestAnimationFrame(this.animate);
-            this.render();
-        },
-        render() {
-            camera.position.x += (mouseX - camera.position.x) * 0.05;
-            camera.position.y += (-mouseY - camera.position.y) * 0.05;
-            // camera.position.x = 300;
-            camera.position.y = 500;
-            camera.lookAt(scene.position);
-            const positions = particles.geometry.attributes.position.array;
-            const scales = particles.geometry.attributes.scale.array;
-            let i = 0,
-                j = 0;
-            for (let ix = 0; ix < AMOUNTX; ix++) {
-                for (let iy = 0; iy < AMOUNTY; iy++) {
-                    positions[i + 1] =
-                        Math.sin((ix + count) * 0.3) * 50 +
-                        Math.sin((iy + count) * 0.5) * 50;
-                    scales[j] =
-                        (Math.sin((ix + count) * 0.3) + 1) * 20 +
-                        (Math.sin((iy + count) * 0.5) + 1) * 20;
-
-                    i += 3;
-                    j++;
-                }
-            }
-            particles.geometry.attributes.position.needsUpdate = true;
-            particles.geometry.attributes.scale.needsUpdate = true;
-            renderer.render(scene, camera);
-            count += 0.1;
+        blueClick() {
+            this.index = 0;
         },
     },
 };
 </script>
-<style></style>
+<style lang="scss" scoped>
+.login-box {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    width: 360px;
+    height: 320px;
+    background-color: rgba($color: #ffffff, $alpha: 0.3);
+    &:hover {
+        transition: 0.3s all;
+        background-color: rgba($color: #ffffff, $alpha: 0.8);
+        border: 1px solid #fff;
+        .login-content {
+            transition: 0.3s all;
+            display: block !important;
+        }
+        .login-tips-box {
+            transition: 0.3s all;
+            display: none !important;
+        }
+    }
+    padding: 60px 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .login-tips-box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px 0 60px;
+        .loading {
+            position: relative;
+        }
+    }
+    .login-content {
+        display: none;
+        width: 360px;
+        padding-bottom: 20px;
+        .login-title {
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #2165f8;
+            padding-bottom: 20px;
+        }
+        .login-input {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid #fff;
+            padding: 5px 15px;
+            margin-top: 20px;
+            border-radius: 6px;
+            background-color: rgba($color: #fff, $alpha: 0.5);
+            &.active {
+                transition: 0.3s all ease;
+                border: 2px solid #2165f8;
+                background-color: rgba($color: #fff, $alpha: 0.8);
+            }
+            .left {
+                display: flex;
+                align-items: center;
+                width: 90%;
+                .iconfont {
+                    margin-right: 10px;
+                    font-size: 20px;
+                    color: #666;
+                }
+                input {
+                    width: 100%;
+                    height: 30px;
+                    background: none;
+                    outline: none;
+                    border: none;
+                    font-size: 18px;
+                    padding-top: 1px;
+                    &:focus {
+                        border: none;
+                    }
+                    &:active {
+                        border: none;
+                    }
+                }
+            }
+            .right {
+                color: #666;
+                font-size: 20px;
+                cursor: pointer;
+                &.active {
+                    color: #2165f8;
+                }
+            }
+        }
+        .find-pwd {
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px 0 25px 0;
+            span {
+                cursor: pointer;
+                color: #555;
+                &:hover {
+                    color: #2165f8;
+                }
+            }
+        }
+        .login-btn {
+            height: 50px;
+            background-color: #3c76f1;
+            border-radius: 8px;
+            font-size: 20px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            &:hover {
+                transition: 0.3s all ease;
+                background-color: #2165f8;
+                box-shadow: 0 3px 20px 3px rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+}
+</style>

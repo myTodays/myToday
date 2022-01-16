@@ -1,5 +1,5 @@
 <template>
-    <div id="bodyBox"></div>
+    <div id="dotsContainer"></div>
 </template>
 
 <script>
@@ -27,7 +27,7 @@ export default {
         return {};
     },
     mounted() {
-        bodyContent = document.getElementById("bodyBox");
+        bodyContent = document.getElementById("dotsContainer");
         bodyContent && this.init();
         this.animate();
     },
