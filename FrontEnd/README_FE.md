@@ -1,4 +1,4 @@
-# myCenter-FrontEnd
+# myToday-FrontEnd
 
 ## Project setup
 ```

@@ -18,9 +18,9 @@ app.component("v-mofang", vMofang);
 app.component("v-loading", vLoading);
 app.component("v-logo", vLogo);
 
-app.use(ElementPlus);
+app.use(ElementPlus, { size: 'small', zIndex: 3000 });
 app.use(store);
 app.use(router);
 app.mount("#app");
 
-document.title = "myCenter";
+document.title = "myToday";

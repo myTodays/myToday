@@ -44,7 +44,7 @@ app.use("/api/message", require("./routers/message")); // 留言
 
 // 链接数据库
 mongoose.connect(
-    "mongodb://localhost:27017/myCenter",
+    "mongodb://localhost:27017/myToday",
     {
         useNewUrlParser: true,
     },
@@ -55,7 +55,7 @@ mongoose.connect(
             console.log("数据库连接成功！");
             // 监听 http 请求,相当于 server.listen
             app.listen(8080, () => {
-                console.log("myCenter---", "serve is running at port 8888...");
+                console.log("myToday---", "serve is running at port 8888...");
             });
         }
     }
