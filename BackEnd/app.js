@@ -66,7 +66,7 @@ mongoose.connect(
 //     db_pwd: "123456",
 //     db_host: "127.0.0.1",
 //     db_port: 27017,
-//     db_name: "myCenter", //数据库名称
+//     db_name: "myToday", //数据库名称
 //     useNewUrlParser: true,
 // };
 

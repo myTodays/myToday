@@ -13,6 +13,7 @@
 
 <script>
 export default {
+    name:'v-mofang',
     data() {
         return {
             box: 10,

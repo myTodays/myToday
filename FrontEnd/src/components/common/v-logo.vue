@@ -10,7 +10,7 @@ export default {
     props: {
         logoText: {
             type: String,
-            default: "MyCenter",
+            default: "myToday",
         },
         fontSize: {
             type: String,

@@ -6,12 +6,20 @@ const router = createRouter({
     routes: [
         {
             path: "/",
-            component: () => import("@/layout/login.vue"),
+            redirect: "/home",
         },
-        //   {
-        //     path: '/login',
-        //     component: ()=>import('@/views/login')
-        //   }
+        {
+            path: "/home",
+            component: () => import("@/layout/home.vue"),
+            meta: { title: "首页" },
+            children: [
+                {
+                    path: "/login",
+                    component: () => import("@/layout/login.vue"),
+                    meta: { title: "登录" },
+                },
+            ],
+        }
     ],
 });
 

@@ -6,6 +6,7 @@
 
 <script>
 export default {
+    name:'v-input',
     data() {
         return {
             placeholder: "请输入...",

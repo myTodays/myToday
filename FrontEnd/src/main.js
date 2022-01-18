@@ -8,17 +8,15 @@ import "element-plus/dist/index.css";
 import store from "./store/index";
 // 引入路由
 import router from "./routers/index";
+// 引入组件
+import {tplConfig} from "./components/config";
 
 const app = createApp(App);
 
-import vMofang from "@/components/Plugins/v-mofang.vue";
-import vLoading from "@/components/Plugins/v-loading.vue";
-import vLogo from "@/components/common/v-logo.vue";
-app.component("v-mofang", vMofang);
-app.component("v-loading", vLoading);
-app.component("v-logo", vLogo);
+tplConfig(app);
+// console.log('publicPath',process.env)
 
-app.use(ElementPlus, { size: 'small', zIndex: 3000 });
+app.use(ElementPlus, { size: "small", zIndex: 3000 });
 app.use(store);
 app.use(router);
 app.mount("#app");

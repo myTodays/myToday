@@ -89,7 +89,7 @@ export default {
             // PLY file
             const plyLoader = new PLYLoader();
             // 导入自由女神像
-            plyLoader.load("../../../3dModels/fish.ply", (geometry) => {
+            plyLoader.load(`${process.env.BASE_URL}/3dModels/fish.ply`, (geometry) => {
                 geometry.computeVertexNormals();
                 const material = new THREE.MeshStandardMaterial({
                     color: 0x0055ff,
@@ -106,7 +106,7 @@ export default {
                 scene.add(mesh);
             });
             // 导入鱼模型
-            plyLoader.load("../../../3dModels/lucky.ply", (geometry) => {
+            plyLoader.load(`${process.env.BASE_URL}/3dModels/lucky.ply`, (geometry) => {
                 geometry.computeVertexNormals();
                 const material = new THREE.MeshStandardMaterial({
                     color: 0x0055ff,

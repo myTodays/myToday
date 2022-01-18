@@ -9,7 +9,7 @@
         <div class="login-content">
             <div class="login-title">
                 <v-logo
-                    :logoText="username || 'myCenter'"
+                    :logoText="username || 'myToday'"
                     fontSize="60px"
                 ></v-logo>
             </div>

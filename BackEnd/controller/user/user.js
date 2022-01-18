@@ -139,7 +139,7 @@ class User {
         try {
             const userList = await UserModel.find();
             // let newUsers = userList.filter((i) => {
-            //     return i.username != "myCenter";
+            //     return i.username != "myToday";
             // });
             if (Boolean(result.superAdmin)) {
                 return res.status(200).json({

@@ -4,9 +4,13 @@ const store = createStore({
         hasLogin: false,
         token: "",
         userInfo: "",
-        threeFlag: false,
+        bgType: "lucky",
     },
-    mutations: {},
+    mutations: {
+        toggleBgType(state, data) {
+            state.bgType = data;
+        },
+    },
     actions: {},
     modules: {},
 });

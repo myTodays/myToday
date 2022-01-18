@@ -14,7 +14,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+    name:'v-loading',
+};
 </script>
 
 <style lang="scss" scoped>
