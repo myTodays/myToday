@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div class="app">
         <router-view></router-view>
     </div>
 </template>
@@ -13,6 +13,9 @@ export default {
         const store = useStore();
         return { store };
     },
+    // mounted(){
+    //      this.$router.push("/home");
+    // }
 };
 </script>
 

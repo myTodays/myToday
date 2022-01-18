@@ -6,10 +6,10 @@ const router = createRouter({
     routes: [
         {
             path: "/",
-            redirect: "/home",
+            redirect: "/login",
         },
         {
-            path: "/home",
+            path: "/",
             component: () => import("@/layout/home.vue"),
             meta: { title: "首页" },
             children: [

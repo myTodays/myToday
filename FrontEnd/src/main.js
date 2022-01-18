@@ -8,11 +8,11 @@ import "element-plus/dist/index.css";
 import store from "./store/index";
 // 引入路由
 import router from "./routers/index";
-// 引入组件
-import {tplConfig} from "./components/config";
 
 const app = createApp(App);
 
+// 引入组件
+import {tplConfig} from "./components/config";
 tplConfig(app);
 // console.log('publicPath',process.env)
 
