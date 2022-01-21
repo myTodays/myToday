@@ -1,5 +1,5 @@
 <template>
-  <div class="likui">李魁</div>
+  <div class="component">组件</div>
 </template>
 
 <script>
