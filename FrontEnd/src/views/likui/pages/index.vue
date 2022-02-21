@@ -1,13 +1,18 @@
 <template>
-  <div class="likui">李魁</div>
+    <div class="demo"></div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
 
-}
+export default defineComponent({
+    setup() {
+        
+    },
+})
 </script>
 
-<style>
+
+<style lang='scss'>
 
 </style>

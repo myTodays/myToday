@@ -88,8 +88,7 @@ export default {
 
             // PLY file
             const plyLoader = new PLYLoader();
-            // console.log(555,666,process.env.BASE_URL)
-            // 导入自由女神像
+            // 导入鱼模型
             plyLoader.load(`${process.env.BASE_URL}/3dModels/fish.ply`, (geometry) => {
                 geometry.computeVertexNormals();
                 const material = new THREE.MeshStandardMaterial({
@@ -106,7 +105,7 @@ export default {
                 mesh.scale.set(0.05, 0.05, 0.05);
                 scene.add(mesh);
             });
-            // 导入鱼模型
+            // 导入自由女神像
             plyLoader.load(`${process.env.BASE_URL}/3dModels/lucky.ply`, (geometry) => {
                 geometry.computeVertexNormals();
                 const material = new THREE.MeshStandardMaterial({

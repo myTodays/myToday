@@ -12,9 +12,8 @@ import router from "./router/index";
 const app = createApp(App);
 
 // 引入组件
-import {tplConfig} from "./components/config";
+import { tplConfig } from "./components/config";
 tplConfig(app);
-// console.log('publicPath',process.env)
 
 app.use(ElementPlus, { size: "small", zIndex: 3000 });
 app.use(store);

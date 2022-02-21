@@ -1,13 +1,18 @@
 <template>
-  <div class="test">测试</div>
+    <div class="test"></div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
 
-}
+export default defineComponent({
+    setup() {
+        
+    },
+})
 </script>
 
-<style>
+
+<style lang='scss'>
 
 </style>

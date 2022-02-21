@@ -10,9 +10,9 @@
     </div>
 </template>
 <script>
-import vDots from "@/components/V-3D/dots/v-3d-dots.vue";
-import vOcean from "@/components/V-3D/ocean/v-3d-ocean.vue";
-import vBg from "@/components/Plugins/v-bg.vue";
+import vDots from "@/components/v-3D/dots/v-3d-dots.vue";
+import vOcean from "@/components/v-3D/ocean/v-3d-ocean.vue";
+import vBg from "@/components/plugins/v-bg.vue";
 import vSidebar from "@/layout/sidebar.vue";
 import { useStore } from "vuex";
 export default {
@@ -29,12 +29,5 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.home-box {
-    .home-box-content {
-        background-color: transparent;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
+// .home-box {}
 </style>

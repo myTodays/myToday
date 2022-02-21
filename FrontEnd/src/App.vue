@@ -6,16 +6,12 @@
 
 <script>
 import { useStore } from "vuex";
-
 export default {
     name: "App",
     setup() {
         const store = useStore();
         return { store };
-    },
-    // mounted(){
-    //      this.$router.push("/home");
-    // }
+    }
 };
 </script>
 
@@ -25,5 +21,4 @@ export default {
 @import "./styles/iconfont.css";
 @import "./styles/index.scss";
 @import "./styles/animation.css";
-// #app {}
 </style>

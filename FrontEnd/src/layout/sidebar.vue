@@ -5,7 +5,7 @@
                 <div class="tips">返回上一页</div>
                 <div class="iconfont icon-huitui"></div>
             </div>
-            <div class="nav-list">
+            <div @click="navTo" class="nav-list">
                 <div class="tips">主页</div>
                 <div class="iconfont icon-home"></div>
             </div>
@@ -88,6 +88,9 @@ export default {
             this.bgFlag = false;
             this.$store.commit("toggleBgType", bg.type);
         },
+        navTo(){
+            this.$router.push('/');
+        }
     },
     setup() {
         const store = useStore();
@@ -101,6 +104,7 @@ export default {
     position: fixed;
     left: 5%;
     top: 5%;
+    z-index: 10000;
     .nav-box {
         display: flex;
         flex-direction: column;
