@@ -6,7 +6,7 @@ import vLoading from "@/components/Plugins/v-loading.vue";
 import vLogo from "@/components/common/v-logo.vue";
 
 // 导出组件
-export function tplConfig(app) {
+export function tplConfig(app:any) {
     app.component("v-mofang", vMofang);
     app.component("v-loading", vLoading);
     app.component("v-logo", vLogo);

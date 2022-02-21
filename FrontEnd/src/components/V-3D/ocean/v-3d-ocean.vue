@@ -88,6 +88,7 @@ export default {
 
             // PLY file
             const plyLoader = new PLYLoader();
+            // console.log(555,666,process.env.BASE_URL)
             // 导入自由女神像
             plyLoader.load(`${process.env.BASE_URL}/3dModels/fish.ply`, (geometry) => {
                 geometry.computeVertexNormals();

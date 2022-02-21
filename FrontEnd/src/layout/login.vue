@@ -1,5 +1,5 @@
 <template>
-    <div class="login-box">
+    <div v-if="false" class="login-box">
         <div class="login-tips-box">
             <v-logo fontSize="60px"></v-logo>
             <div class="loading">

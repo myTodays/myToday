@@ -7,7 +7,7 @@ import "element-plus/dist/index.css";
 // 引入数据仓库
 import store from "./store/index";
 // 引入路由
-import router from "./routers/index";
+import router from "./router/index";
 
 const app = createApp(App);
 
