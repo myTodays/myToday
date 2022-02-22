@@ -17,7 +17,7 @@
     </div>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import Mine from "../../common/ts/Game";
 import { defineComponent } from "vue";
 
@@ -25,8 +25,8 @@ export default defineComponent({
     setup() {},
     mounted() {
         // 上边button的功能
-        let btns:any = document.querySelectorAll(".level button");
-        let mine = null; //用来存储生成的实例
+        let btns: any = document.querySelectorAll(".level button");
+        let mine: any = null; //用来存储生成的实例
         let ln = 0;
         let arr = [
             [9, 9, 10],
@@ -47,13 +47,14 @@ export default defineComponent({
             mine.init();
         };
         // 自定义按钮
-        let customize:any = document.getElementsByClassName("customize")[0];
+        // let window:any=Window;
+        let customize: any = document.getElementsByClassName("customize")[0];
         customize.onclick = function () {
             customize.style.backgroundColor = "rgb(235, 62, 62)";
             const mine = new Mine(
-                parseInt(window.prompt("请输入行数: ")),
-                parseInt(window.prompt("请输入列数: ")),
-                parseInt(window.prompt("请输入雷数: ")),
+                parseInt(<any>window.prompt(<any>"请输入行数: ")),
+                parseInt(<any>window.prompt(<any>"请输入列数: ")),
+                parseInt(<any>window.prompt(<any>"请输入雷数: "))
             );
             mine.init();
         };

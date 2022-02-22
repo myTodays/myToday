@@ -13,14 +13,28 @@ const routes: Array<RouteRecordRaw> = [
             {
                 path: "/login",
                 component: () => import("@/layout/login.vue"),
-                meta: { title: "登录" },
+                meta: { title: "登录" }
             },
-            //扫雷游戏
+            // demo
+            {
+                path: "/demo",
+                component: () =>
+                    import("@/views/demo/demo/demo.vue"),
+                meta: { title: "演示" }
+            },
+            // likui -- 测试
+            {
+                path: "/likui",
+                component: () =>
+                    import("@/views/likui/test/test.vue"),
+                meta: { title: "测试" }
+            },
+            // 扫雷游戏
             {
                 path: "/saolei",
                 component: () =>
                     import("@/views/likui/pages/saolei/saolei.vue"),
-                meta: { title: "扫雷游戏" },
+                meta: { title: "扫雷游戏" }
             },
         ],
     },

@@ -14,9 +14,38 @@ body {
     font-family: "PingFang SC", "Helvetica Neue", Helvetica, "microsoft yahei",
         arial, STHeiTi, sans-serif;
 }
+ul {
+    list-style: none;
+}
 
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+i {
+    font-style: normal;
+}
+
+button {
+    outline: none;
+    /* border: none; */
+}
+
+/* 边框模式，合并的模式 */
+/* table {
+    border-collapse: collapse;
+} */
+
+th, td {
+    padding: 0;
+}
 a {
     text-decoration: none;
+}
+
+div{
+    box-sizing: border-box;
 }
 
 /* 浏览器滚动条 */
@@ -26,7 +55,6 @@ a {
 }
 ::-webkit-scrollbar-track-piece {
     background-color: rgba(0, 0, 0, 0.1);
-    -webkit-border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:vertical {
     height: 6px;
@@ -37,7 +65,7 @@ a {
         rgba(248, 4, 49, 0.5),
         rgba(8, 72, 247, 0.5)
     );
-    -webkit-border-radius: 3px;
+    border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:horizontal {
     width: 3px;
@@ -48,5 +76,5 @@ a {
         rgba(248, 4, 49, 0.5),
         rgba(8, 72, 247, 0.5)
     );
-    -webkit-border-radius: 3px;
+    border-radius: 3px;
 }

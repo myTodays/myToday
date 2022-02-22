@@ -1,11 +1,11 @@
 <template>
     <div class="sidebar-box">
         <div class="nav-box">
-            <div class="nav-list big">
+            <div @click="navTo('/saolei')" class="nav-list big">
                 <div class="tips">返回上一页</div>
                 <div class="iconfont icon-huitui"></div>
             </div>
-            <div @click="navTo" class="nav-list">
+            <div @click="navTo('/')" class="nav-list">
                 <div class="tips">主页</div>
                 <div class="iconfont icon-home"></div>
             </div>
@@ -88,8 +88,8 @@ export default {
             this.bgFlag = false;
             this.$store.commit("toggleBgType", bg.type);
         },
-        navTo(){
-            this.$router.push('/');
+        navTo(url){
+            this.$router.push(url);
         }
     },
     setup() {
