@@ -92,14 +92,16 @@ export default {
             plyLoader.load(`${process.env.BASE_URL}/3dModels/fish.ply`, (geometry) => {
                 geometry.computeVertexNormals();
                 const material = new THREE.MeshStandardMaterial({
-                    color: 0x0055ff,
+                    color: 0xff0000,
                     flatShading: true,
                 });
                 const mesh = new THREE.Mesh(geometry, material);
-                mesh.position.x = 0;
+                mesh.position.x = 30;
                 mesh.position.y = 30;
                 mesh.position.z = 30;
                 mesh.rotation.x = -Math.PI / 2;
+                mesh.rotation.y = Math.PI / 2;
+
                 mesh.castShadow = true;
                 mesh.receiveShadow = true;
                 mesh.scale.set(0.05, 0.05, 0.05);
@@ -109,13 +111,15 @@ export default {
             plyLoader.load(`${process.env.BASE_URL}/3dModels/lucky.ply`, (geometry) => {
                 geometry.computeVertexNormals();
                 const material = new THREE.MeshStandardMaterial({
-                    color: 0x0055ff,
+                    color: 0xffffff,
                     flatShading: true,
                 });
                 const mesh = new THREE.Mesh(geometry, material);
-                mesh.position.x = 0;
+                mesh.position.x = -30;
                 mesh.position.y = 40;
-                mesh.position.z = -20;
+                mesh.position.z = 20;
+                mesh.rotation.y = -Math.PI / 2;
+
                 mesh.scale.set(0.05, 0.05, 0.05);
                 mesh.castShadow = true;
                 mesh.receiveShadow = true;
@@ -148,4 +152,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+div{
+    color: #e9520c;
+}
+
+</style>
