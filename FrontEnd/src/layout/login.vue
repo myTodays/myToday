@@ -1,5 +1,5 @@
 <template>
-    <div v-if="false" class="login-box">
+    <div class="login-box">
         <div class="login-tips-box">
             <v-logo fontSize="60px"></v-logo>
             <div class="loading">
@@ -44,7 +44,7 @@
                 ></span>
             </div>
             <div class="find-pwd"><span>忘记密码?</span></div>
-            <div class="login-btn">登&nbsp;&nbsp;&nbsp;&nbsp;录</div>
+            <div @click="login" class="login-btn">登&nbsp;&nbsp;&nbsp;&nbsp;录</div>
         </div>
     </div>
 </template>
@@ -65,6 +65,9 @@ export default {
         blueClick() {
             this.index = 0;
         },
+        login(){
+            
+        }
     },
 };
 </script>
@@ -75,10 +78,13 @@ export default {
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
-    width: 360px;
+    width: 380px;
     height: 320px;
     background-color: rgba($color: #ffffff, $alpha: 0.3);
     &:hover {
+        width: 560px;
+        height: 500px;
+        padding: 60px 50px;
         transition: 0.3s all;
         background-color: rgba($color: #ffffff, $alpha: 0.8);
         border: 1px solid #fff;
@@ -91,7 +97,6 @@ export default {
             display: none !important;
         }
     }
-    padding: 60px 50px;
     border-radius: 10px;
     display: flex;
     justify-content: center;

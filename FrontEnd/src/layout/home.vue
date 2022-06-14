@@ -3,7 +3,7 @@
         <v-bg v-if="store.state.bgType == 'none'"></v-bg>
         <v-3d-dots v-if="store.state.bgType == 'spirit'"></v-3d-dots>
         <v-3d-ocean v-if="store.state.bgType == 'lucky'"></v-3d-ocean>
-        <v-sidebar></v-sidebar>
+        <!-- <v-sidebar></v-sidebar> -->
         <div class="home-box-content">
             <router-view></router-view>
         </div>

@@ -3,7 +3,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 const routes: Array<RouteRecordRaw> = [
     {
         path: "/",
-        redirect: "/login",
+        redirect: "/test",
     },
     {
         path: "/",
@@ -13,28 +13,32 @@ const routes: Array<RouteRecordRaw> = [
             {
                 path: "/login",
                 component: () => import("@/layout/login.vue"),
-                meta: { title: "登录" }
+                meta: { title: "登录" },
+            },
+            // test -- 测试
+            {
+                path: "/test",
+                component: () => import("@/views/test/test.vue"),
+                meta: { title: "测试" },
             },
             // demo
             {
                 path: "/demo",
-                component: () =>
-                    import("@/views/demo/demo/demo.vue"),
-                meta: { title: "演示" }
+                component: () => import("@/views/demo/demo/demo.vue"),
+                meta: { title: "演示" },
             },
-            // likui -- 测试
+
             {
-                path: "/likui",
-                component: () =>
-                    import("@/views/likui/test/test.vue"),
-                meta: { title: "测试" }
+                path: "/target",
+                component: () => import("@/views/likui/pages/target.vue"),
+                meta: { title: "目标" },
             },
             // 扫雷游戏
             {
                 path: "/saolei",
                 component: () =>
                     import("@/views/likui/pages/saolei/saolei.vue"),
-                meta: { title: "扫雷游戏" }
+                meta: { title: "扫雷游戏" },
             },
         ],
     },

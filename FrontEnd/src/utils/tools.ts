@@ -4,7 +4,7 @@
  */
 
 // 数字脱敏
-export function handdleNum(num: any, start = 3, end = 7) {
+export function handdleNum(num: any, start: number = 3, end: number = 7) {
     let str = num.substr(0, start) + "*".repeat(end - start) + num.substr(end);
     return str;
 }
@@ -17,7 +17,7 @@ export function checkPhone(phone: any) {
 }
 
 // 验证码邮箱
-export function checkEmail(email: nay) {
+export function checkEmail(email: any) {
     if (
         !/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(
             email
@@ -77,3 +77,4 @@ export function checkChinese(str: string) {
     }
     return flag;
 }
+

@@ -47,7 +47,6 @@ export default defineComponent({
             mine.init();
         };
         // 自定义按钮
-        // let window:any=Window;
         let customize: any = document.getElementsByClassName("customize")[0];
         customize.onclick = function () {
             customize.style.backgroundColor = "rgb(235, 62, 62)";
