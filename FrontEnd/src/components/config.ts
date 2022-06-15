@@ -1,9 +1,9 @@
 // 魔方
-import vMofang from "@/components/plugins/v-mofang.vue";
+import vMofang from "@/components/Plugins/v-mofang.vue";
 // 加载中
-import vLoading from "@/components/plugins/v-loading.vue";
+import vLoading from "@/components/Plugins/v-loading.vue";
 // logo
-import vLogo from "@/components/base/v-logo.vue";
+import vLogo from "@/components/Base/v-logo.vue";
 
 // 导出组件
 export function tplConfig(app:any) {
