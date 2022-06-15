@@ -12,6 +12,7 @@ export default {
             placeholder: "请输入...",
         };
     },
+    methods:{}
 };
 </script>
 
