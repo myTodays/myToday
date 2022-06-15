@@ -46,7 +46,7 @@ export default {
             console.log("result", result);
         },
         btnOne() {
-            this.getPictrue();
+            // this.getPictrue();
             // const set = new Set();
             // set.add(1).add(2).add(3).add(3);
             // console.log(set.has(2));
@@ -59,7 +59,7 @@ export default {
         },
 
         btnTwo() {
-            // console.log(666)
+            console.log(666)
             return 666;
         },
         btnThree() {},
