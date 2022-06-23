@@ -12,8 +12,7 @@
     </div>
 </template>
 
-<script>
-import Draw from "../../utils/Draw";
+<script lang="ts">
 export default {
     data() {
         return {
@@ -22,44 +21,13 @@ export default {
     },
     mounted() {},
     methods: {
-        async getPictrue() {
-            // 海报配置
-            let config = {
-                canvasId: "canvasBox",
-                type: "Poster", //Poster(海报)，QRcode(二维码),Charts(图表)
-                width: 375,
-                height: 600,
-                // background: "#fff",
-                // border: "1px solid #ddd",
-            };
-            // 海报数据
-            let data = {
-                source: "东方屹腾",
-                nickname: "任鹏飞", //昵称
-                department: "520特惠", // 部门
-                position: "媳妇不在身边，今晚可出租，扫码交易。", // 职位
-                avatar: require("@/assets/poster/rpf/avatar.jpeg"), // 用户头像
-                coverSrc: require("@/assets/poster/rpf/poster.jpeg"), // 分享封面背景图
-                QRcodeSrc: require("@/assets/poster/rpf/qrcode.jpeg"),
-            };
-            let result = await new Draw.Poster(config, data).init();
-            console.log("result", result);
-        },
         btnOne() {
-            // this.getPictrue();
-            // const set = new Set();
-            // set.add(1).add(2).add(3).add(3);
-            // console.log(set.has(2));
-            // console.log(set.has(5));
-            // console.log(set.delete(2));
-            // console.log(set.has(2));
-            // console.log([...set]);
-            // console.log(set.size);
-            // let promise = new Promise((res, err) => {});
+            const str: string = "likui";
+            console.log('str--',str)
         },
 
         btnTwo() {
-            console.log(666)
+            console.log(666);
             return 666;
         },
         btnThree() {},

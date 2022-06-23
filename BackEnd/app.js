@@ -13,7 +13,6 @@ app.use(
     "/node_modules/",
     express.static(path.join(__dirname, "./node_modules/"))
 );
-
 app.all("*", (req, res, next) => {
     const { origin, Origin, referer, Referer } = req.headers;
     const allowOrigin = origin || Origin || referer || Referer || "*";
