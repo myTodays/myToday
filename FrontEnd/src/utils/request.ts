@@ -12,23 +12,23 @@ service.interceptors.request.use(
     (config) => {
         return config;
     },
-    (error) => {
-        console.log(error);
-        return Promise.reject(error);
+    (err) => {
+        console.log(err);
+        return Promise.reject(err);
     }
 );
 
 service.interceptors.response.use(
-    (response) => {
-        if (response.status === 200) {
-            return response.data;
+    (res) => {
+        if (res.status === 200) {
+            return res.data;
         } else {
-            Promise.reject();
+            return Promise.reject();
         }
     },
-    (error) => {
-        console.log(error);
-        return Promise.reject(error);
+    (err) => {
+        console.log(err);
+        return Promise.reject(err);
     }
 );
 export default service;
