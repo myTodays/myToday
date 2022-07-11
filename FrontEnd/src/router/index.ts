@@ -21,23 +21,16 @@ const routes: Array<RouteRecordRaw> = [
                 component: () => import("@/views/test/test.vue"),
                 meta: { title: "测试" },
             },
-            // demo
-            {
-                path: "/demo",
-                component: () => import("@/views/demo/demo/demo.vue"),
-                meta: { title: "演示" },
-            },
-
             {
                 path: "/target",
-                component: () => import("@/views/likui/pages/target.vue"),
+                component: () => import("@/views/target/target.vue"),
                 meta: { title: "目标" },
             },
             // 扫雷游戏
             {
                 path: "/saolei",
                 component: () =>
-                    import("@/views/likui/pages/saolei/saolei.vue"),
+                    import("@/views/game/saolei.vue"),
                 meta: { title: "扫雷游戏" },
             },
         ],

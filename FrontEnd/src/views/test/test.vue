@@ -1,14 +1,9 @@
 <template>
     <div class="vue-test">
         <div class="operate-btn">
-            <el-button @click="btnOne" type="primary">按钮一</el-button>
-            <el-button @click="btnTwo" type="success">按钮二</el-button>
-            <el-button @click="btnThree" type="info">按钮三</el-button>
-            <el-button @click="btnFour" type="warning">按钮四</el-button>
-            <el-button @click="btnFive" type="danger">按钮五</el-button>
+            <div @click="onClick" class="btn">执行</div>
         </div>
-        <div id="canvasBox"></div>
-        <div v-text="content" class="content"></div>
+        <div class="content">{{ content }}</div>
     </div>
 </template>
 
@@ -19,20 +14,9 @@ export default {
             content: ``,
         };
     },
-    mounted() {},
     methods: {
-        btnOne() {
-            const str: string = "likui";
-            console.log('str--',str)
+        onClick() {
         },
-
-        btnTwo() {
-            console.log(666);
-            return 666;
-        },
-        btnThree() {},
-        btnFour() {},
-        btnFive() {},
     },
 };
 </script>
@@ -51,21 +35,23 @@ export default {
     border-radius: 4px;
     .operate-btn {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
+        .btn {
+            padding: 8px 30px;
+            border-radius: 8px;
+            color: #666;
+            background-color: #ddd;
+        }
     }
     .content {
         width: calc(90vw - 40px);
         height: calc(90vh - 95px);
         border-radius: 4px;
         margin-top: 20px;
-        border: 1px solid #999;
+        border: 1px solid #eee;
         background-color: #fff;
         padding: 15px;
     }
-}
-.el-button--small {
-    height: 4.5vh;
-    width: 15vw;
 }
 </style>

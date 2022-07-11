@@ -16,9 +16,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./styles/reset.css";
-@import "./styles/main.css";
-@import "./styles/iconfont.css";
-@import "./styles/index.scss";
-@import "./styles/animation.css";
+@import "./common/styles/reset.css";
+@import "./common/styles/main.css";
+@import "./common/styles/iconfont.css";
+@import "./common/styles/index.scss";
+@import "./common/styles/animation.css";
 </style>

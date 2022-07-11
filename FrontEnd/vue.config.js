@@ -21,10 +21,10 @@ module.exports = {
         loaderOptions: {
             // 给 sass-loader 传递选项
             sass: {
-                additionalData: `@import "~@/styles/index.sass"`,
+                additionalData: `@import "~@/common/styles/index.sass"`,
             },
             scss: {
-                additionalData: `@import "~@/styles/index.scss";`,
+                additionalData: `@import "~@/common/styles/index.scss";`,
             },
         },
     },

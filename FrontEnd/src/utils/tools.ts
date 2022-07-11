@@ -31,31 +31,28 @@ export function checkEmail(email: any) {
 // 格式化日期: 年-月-日
 export function formatDate(times: number) {
     let date = new Date(times * 1000); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
-    let Y = date.getFullYear() + "-";
-    let M =
-        (date.getMonth() + 1 < 10
-            ? "0" + (date.getMonth() + 1)
-            : date.getMonth() + 1) + "-";
-    let D = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+    let Y: any = date.getFullYear() + "-";
+    let M: any = date.getMonth() + 1;
+    M = (M < 10 ? "0" + M : M) + "-";
+    let D: any = date.getDate();
+    D = D < 10 ? "0" + D : D;
     return Y + M + D;
 }
 
 // 格式化时间: 年-月-日 时:分:秒
 export function formatTime(times: number) {
     let date = new Date(times * 1000); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
-    let Y = date.getFullYear() + "-";
-    let M =
-        (date.getMonth() + 1 < 10
-            ? "0" + (date.getMonth() + 1)
-            : date.getMonth() + 1) + "-";
-    let D = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
-    let h =
-        (date.getHours() < 10 ? "0" + date.getHours() : date.getHours()) + ":";
-    let m =
-        (date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()) +
-        ":";
-    let s =
-        date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+    let Y: any = date.getFullYear() + "-";
+    let M: any = date.getMonth() + 1;
+    M = (M < 10 ? "0" + M : M) + "-";
+    let D: any = date.getDate();
+    D = D < 10 ? "0" + D : D;
+    let h: any = date.getHours();
+    h = (h < 10 ? "0" + h : h) + ":";
+    let m: any = date.getMinutes();
+    m = (m < 10 ? "0" + m : m) + ":";
+    let s: any = date.getSeconds();
+    s = s < 10 ? "0" + s : s;
     return Y + M + D + " " + h + m + s;
 }
 
@@ -77,4 +74,3 @@ export function checkChinese(str: string) {
     }
     return flag;
 }
-

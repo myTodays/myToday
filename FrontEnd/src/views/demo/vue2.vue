@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Draw from "../../utils/Draw";
+import Draw from "../../common/js/Draw";
 export default {
     data() {
         return {

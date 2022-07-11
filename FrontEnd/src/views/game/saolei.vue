@@ -70,7 +70,7 @@ export default defineComponent({
     z-index: 100;
     width: 100%;
     height: 100%;
-    background-image: url(../../common/images/bg.png);
+    background-image: url(../../assets/images/bg.png);
     background-size: 100% 100%;
     background-repeat: repeat-y;
     overflow: auto;
@@ -111,12 +111,12 @@ export default defineComponent({
         .gameBox {
             /* 雷 */
             .mine {
-                background: #d9d9d9 url(../../common/images/panda.png) no-repeat
+                background: #d9d9d9 url(../../assets/images/panda.png) no-repeat
                     center;
                 background-size: cover;
             }
             .flag {
-                background: #ccc url(../../common/images/smiley.gif) no-repeat
+                background: #ccc url(../../assets/images/smiley.gif) no-repeat
                     center;
                 background-size: cover;
             }

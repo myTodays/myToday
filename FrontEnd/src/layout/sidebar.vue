@@ -59,6 +59,7 @@ export default {
     },
     mounted() {},
     methods: {
+        // 展开全屏
         handleFullScreen() {
             let element = document.documentElement;
             if (this.fullscreen) {
@@ -84,13 +85,15 @@ export default {
             }
             this.fullscreen = !this.fullscreen;
         },
+        // 切换背景
         toggleBg(bg) {
             this.bgFlag = false;
             this.$store.commit("toggleBgType", bg.type);
         },
-        navTo(url){
+        // 跳转导航
+        navTo(url) {
             this.$router.push(url);
-        }
+        },
     },
     setup() {
         const store = useStore();
