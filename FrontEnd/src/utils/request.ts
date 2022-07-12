@@ -21,7 +21,7 @@ service.interceptors.request.use(
 
 service.interceptors.response.use(
     (res) => {
-        console.log("相应结果:", res);
+        console.log("响应结果:", res);
         if (res.status === 200) {
             return res.data;
         } else {
