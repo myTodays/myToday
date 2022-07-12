@@ -7,7 +7,9 @@
     </div>
 </template>
 
-<script lang="ts">
+<script>
+import $app from "../../utils/app.js";
+import { getTestData } from "../../api/test";
 export default {
     data() {
         return {
@@ -16,6 +18,11 @@ export default {
     },
     methods: {
         onClick() {
+            this.getData();
+        },
+        async getData() {
+            let result = await getTestData({});
+            console.log(666, result);
         },
     },
 };
@@ -42,6 +49,7 @@ export default {
             border-radius: 8px;
             color: #666;
             background-color: #ddd;
+            cursor: pointer;
         }
     }
     .content {

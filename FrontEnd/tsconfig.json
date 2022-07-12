@@ -32,7 +32,10 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx",  
-    "src/common/tools.ts"  
+    "src/common/tools.ts",
+    "src/common/js/Music.js",
+    "src/common/js/Video.js",
+    "src/utils/app.js"
   ],
   "exclude": [
     "node_modules"

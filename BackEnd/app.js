@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 
 // 创建你的服务器应用程序，也就是原来的http.createServer
 const app = express();
-
 // 公开指定目录，直接通过 /public/xx 的方式访问 public 目录中的所有资源了
 app.use("/", express.static(path.join(__dirname, "./public/")));
 // app.use("/admin", express.static(path.join(__dirname, "./public/admin")));
@@ -40,25 +39,28 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use('./routers/router');
 app.use("/api/user", require("./routers/user")); // 用户
 app.use("/api/message", require("./routers/message")); // 留言
-
+app.use("/api/test", require("./routers/test")); // 测试数据
+app.listen(8888, () => {
+    console.log("myToday---", "serve is running at port 8888...");
+});
 // 链接数据库
-mongoose.connect(
-    "mongodb://localhost:27017/myToday",
-    {
-        useNewUrlParser: true,
-    },
-    (err) => {
-        if (err) {
-            console.log("数据库连接失败！");
-        } else {
-            console.log("数据库连接成功！");
-            // 监听 http 请求,相当于 server.listen
-            app.listen(8080, () => {
-                console.log("myToday---", "serve is running at port 8888...");
-            });
-        }
-    }
-);
+// mongoose.connect(
+//     "mongodb://localhost:27017/myToday",
+//     {
+//         useNewUrlParser: true,
+//     },
+//     (err) => {
+//         if (err) {
+//             console.log("数据库连接失败！");
+//         } else {
+//             console.log("数据库连接成功！");
+//             // 监听 http 请求,相当于 server.listen
+//             app.listen(8888, () => {
+//                 console.log("myToday---", "serve is running at port 8888...");
+//             });
+//         }
+//     }
+// );
 
 // let options = {
 //     db_user: "db_likui", //添加的普通账户名
