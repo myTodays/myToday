@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import $app from "../../utils/app.js";
+import $app from "../../utils/App.js";
 import { getTestData } from "../../api/test";
 export default {
     data() {
@@ -17,11 +17,17 @@ export default {
         };
     },
     methods: {
+
+        
         onClick() {
-            this.getData();
+            // this.getData();
         },
+
         async getData() {
-            let result = await getTestData({});
+            let result = await getTestData({
+                id:1,
+                name:'likui--post'
+            });
             console.log(666, result);
         },
     },
@@ -35,7 +41,7 @@ export default {
     position: fixed;
     left: 50%;
     top: 50%;
-    z-index: 10000;
+    // z-index: 10000;
     transform: translate(-50%, -50%);
     background-color: rgba($color: #fff, $alpha: 0.8);
     padding: 20px;

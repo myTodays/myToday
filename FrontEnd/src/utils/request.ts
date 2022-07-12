@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import { ElMessage } from "element-plus";
 const service = axios.create({
     // 请求接口地址
     baseURL: "http://127.0.0.1:8888",
@@ -9,8 +9,9 @@ const service = axios.create({
 });
 
 service.interceptors.request.use(
-    (config) => {
+    (config: any) => {
         console.log("请求头:", config);
+        config.headers.options = "likui";
         return config;
     },
     (err) => {
@@ -25,7 +26,7 @@ service.interceptors.response.use(
         if (res.status === 200) {
             return res.data;
         } else {
-            return Promise.reject();
+            ElMessage.error(res.status.toString());
         }
     },
     (err) => {

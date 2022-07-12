@@ -1,4 +1,4 @@
-import request from "@/utils/request";
+import request from "@/utils/Request";
 // 用户登录
 export function loginBtn(data = {}) {
     return request({

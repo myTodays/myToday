@@ -35,7 +35,7 @@
     "src/common/tools.ts",
     "src/common/js/Music.js",
     "src/common/js/Video.js",
-    "src/utils/app.js"
+    "src/utils/App.js"
   ],
   "exclude": [
     "node_modules"
