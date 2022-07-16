@@ -11,7 +11,7 @@ const service = axios.create({
 service.interceptors.request.use(
     (config: any) => {
         console.log("请求头:", config);
-        config.headers.options = "likui";
+        config.headers.token = "token-kjasdjf43j5234j5lkjlj";
         return config;
     },
     (err) => {

@@ -17,16 +17,14 @@ export default {
         };
     },
     methods: {
-
-        
         onClick() {
-            // this.getData();
+            
         },
 
         async getData() {
             let result = await getTestData({
-                id:1,
-                name:'likui--post'
+                id: 1,
+                name: "likui--post",
             });
             console.log(666, result);
         },
