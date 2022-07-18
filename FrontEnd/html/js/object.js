@@ -38,5 +38,5 @@
 // console.log(target);
 
 
-let judge = Object.is(0,-0);
-console.log(judge);
+// let judge = Object.is(0,-0);
+// console.log(judge);

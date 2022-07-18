@@ -1,3 +1,8 @@
+/**
+ * @author: LK
+ * @desc: async和await
+ */
+
 const fs = require("fs");
 
 // 读取文件
