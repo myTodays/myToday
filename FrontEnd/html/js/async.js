@@ -1,9 +1,9 @@
 /**
  * @author: LK
- * @desc: async和await
+ * @desc: async 和 await
  */
 
-const fs = require("fs");
+// const fs = require("fs");
 
 // 读取文件
 // const readFile = (fileName) => {
@@ -25,13 +25,13 @@ const fs = require("fs");
 // asyncReadFile();
 async function timeout(ms) {
     await new Promise((resolve) => {
-      setTimeout(resolve, ms);
+        setTimeout(resolve, ms);
     });
-  }
-  
-  async function asyncPrint(value, ms) {
+}
+
+async function asyncPrint(value, ms) {
     await timeout(ms);
     console.log(value);
-  }
-  
-  asyncPrint('hello world', 50);
+}
+
+asyncPrint("hello world", 50);

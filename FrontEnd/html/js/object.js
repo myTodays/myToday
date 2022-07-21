@@ -1,6 +1,6 @@
 /**
  * @author: LK
- * @desc: Object学习
+ * @desc: Object
  */
 
 // let obj = {
